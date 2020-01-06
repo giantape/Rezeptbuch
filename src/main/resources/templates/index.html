@@ -2,9 +2,33 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+    <script th:src="@{webjars/jquery/1.9.1/jquery.min.js}"></script>
+    <script th:src="@{webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
     <title>Index</title>
 </head>
 <body>
-    <h1>Rezeptbuch Giant Ape</h1>
+    <div class="container-fluid">
+        <h1>Rezeptbuch Giant Ape</h1>
+        <div th:if="${not #lists.isEmpty(recipes)}">
+            <table class="table table-striped">
+                <thead class="thead-inverse">
+                <tr>
+                    <th>ID</th>
+                    <th>Description</th>
+                    <th>Details</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="recipe : ${recipes}">
+                    <td th:text="${recipe.id}">123</td>
+                    <td th:text="${recipe.description}">Tasty Goodnees</td>
+                    <td>
+                        <a th:href="@{'/rezept/show/' + ${recipe.id}}" href="#" th:text="'view'">View</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </html>
