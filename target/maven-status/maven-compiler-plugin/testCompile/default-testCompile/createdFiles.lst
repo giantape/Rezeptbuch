@@ -1,0 +1,5 @@
+unklick/Rezeptbuch/controllers/IndexControllerTest.class
+unklick/Rezeptbuch/repositories/UnitOfMeasureRepositoryIT.class
+unklick/Rezeptbuch/services/RecipeServiceImplTest.class
+unklick/Rezeptbuch/domain/CategoryTest.class
+unklick/Rezeptbuch/RezeptbuchApplicationTests.class
